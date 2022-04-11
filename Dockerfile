@@ -1,15 +1,10 @@
 FROM ubuntu:18.04
 
-MAINTAINER Vladimir Jucov + Léo Moraes
-
 # Set environment variables
 ENV HOME /root
 
 # MySQL root password
 ARG MYSQL_ROOT_PASS=root
-
-# Cloudflare DNS
-RUN echo "nameserver 1.1.1.1" | tee /etc/resolv.conf > /dev/null
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && \
